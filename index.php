@@ -20,9 +20,10 @@ class Team  {
     }
 
     public  function isAMember($name){
-        if (! array_key_exists($name , $this->members)){
-            return "Not a member of this team";
-        }
+        if (array_key_exists($name , $this->members)){
+            return "Membership is valid";
+        }else
+            return "Not a member of the team";
     }
 
     public function addMember($name){
@@ -34,7 +35,10 @@ $barcelona = new Team("Barca");
 
 $barcelona->addMember("Lionel Messi");
 $barcelona->addMember("Cristina Ronaldo");
-var_dump($barcelona);
+$barcelona->addMember("Dapo olamide");
+
+var_dump($barcelona->members());
+
 
 
 
