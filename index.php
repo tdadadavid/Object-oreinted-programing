@@ -6,9 +6,16 @@ class Team  {
     protected string $name;
     protected array $members = [];
 
-    public function __construct($name)
+    public function __construct($name , $members = [])
     {
         $this->name = $name;
+        $this->members = $members;
+    }
+
+    public static function create(...$params){
+
+        var_dump(...$params);
+        return new static(...$params);
     }
 
     public function getName(){
@@ -31,14 +38,22 @@ class Team  {
     }
 }
 
-$barcelona = new Team("Barca");
+$barcelona =Team::create("Barca" , [
+    "Lionel Messi",
+    "Cristina Ronaldo" ,
+    "Dapo olamide"
+]);
 
-$barcelona->addMember("Lionel Messi");
-$barcelona->addMember("Cristina Ronaldo");
-$barcelona->addMember("Dapo olamide");
+$barcelona->addMember("jerry Nnkwokwo");
 
-var_dump($barcelona->members());
+var_dump($barcelona);
 
+
+
+
+
+//var_dump($barcelona->members());
+//
 
 
 
