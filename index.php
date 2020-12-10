@@ -13,8 +13,6 @@ class Team  {
     }
 
     public static function create(...$params){
-
-        var_dump(...$params);
         return new static(...$params);
     }
 
@@ -38,22 +36,32 @@ class Team  {
     }
 }
 
+
+class Member{
+    public string $name;
+    public array $portfolio;
+
+    public function __construct(string $name)
+    {
+        $this->name = $name;
+    }
+
+    public function designation($portfolio){
+        return $this->portfolio = $portfolio;
+    }
+
+}
+
 $barcelona =Team::create("Barca" , [
-    "Lionel Messi",
-    "Cristina Ronaldo" ,
-    "Dapo olamide"
+    new Member("Ferdinard Okasd" ),
+    new Member("Taye Taiwo"),
+    new Member("Dapo olamide")
 ]);
 
-$barcelona->addMember("jerry Nnkwokwo");
+
 
 var_dump($barcelona);
 
-
-
-
-
-//var_dump($barcelona->members());
-//
 
 
 
