@@ -1,6 +1,6 @@
 <?php
 
-class AchievementType{
+abstract class AchievementType{
 
     public function name()
     {
@@ -14,18 +14,20 @@ class AchievementType{
         return strtolower(str_replace(' ' , '-' , $this->name())) . '.png';
     }
 
+    abstract public function qaulifier();
+
 }
 
 class FirstThousandPoints extends AchievementType
 {
-    public function qaulifier($user){
-        return null;
+    public function qaulifier(){
+        //
     }
 }
 
 class  FirstBestAnswer extends AchievementType
 {
-    public function qaulifier($user){
+    public function qaulifier(){
         return null;
     }
 
