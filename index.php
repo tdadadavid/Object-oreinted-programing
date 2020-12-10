@@ -4,16 +4,30 @@
 
 class Team  {
     protected $name;
-    protected $noOfPeople;
-    protected $captian;
 
+    public function __construct($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getName(){
+
+    }
+
+    public function members(){
+
+    }
+
+    public  function isAMember(){
+
+    }
+
+    public function addMember(){
+
+    }
 
 }
 
-//class Achievements{
-//    protected $title;
-//    protected $year;
-//    protected $location;
 
 
 
