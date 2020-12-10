@@ -1,38 +1,31 @@
 <?php
 
-abstract class AchievementType{
-
-    public function name()
-    {
-        $class = (new ReflectionClass($this))->getShortName();
-
-        return trim(preg_replace('/[A-Z]/', ' $0' , $class));
-    }
-
-    public function icon()
-    {
-        return strtolower(str_replace(' ' , '-' , $this->name())) . '.png';
-    }
-
-    abstract public function qaulifier();
-
-}
-
-class FirstThousandPoints extends AchievementType
+class CampaignMonitor
 {
-    public function qaulifier(){
-        //
+    public function subscribe()
+    {
+        echo "Thanks for subscribing with us";
     }
 }
 
-class  FirstBestAnswer extends AchievementType
+class Drip
 {
-    public function qaulifier(){
-        return null;
+    public function subscribe()
+    {
+        echo "Thanks for using Drip";
     }
-
 }
 
+class NewsLetterSubscriptionController
+{
+    public function store(CampaignMonitor $newsletter)
+    {
+        $email = "davidtofunmidada@gmail.com";
 
-$achievement = new FirstThousandPoints();
-echo $achievement->icon();
+        $newsletter->subscribe($email);
+    }
+}
+
+$controller = new NewsLetterSubscriptionController();
+
+$controller->store(new Drip());
