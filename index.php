@@ -3,7 +3,9 @@
 
 class Age
 {
-    private $age;
+    public $age;
+
+
 
     /**
      * Age constructor.
@@ -11,6 +13,7 @@ class Age
      */
     public function __construct($age)
     {
+
         if ($age < 0 || $age > 120)
         {
             throw new Exception("Age cannot have this value");
@@ -25,16 +28,19 @@ class Age
     }
 }
 
-$bola
+$bola = new Age(90);
+var_dump($bola);
+$bola->age = 20;
+var_dump($bola);
 
-
-class register
-{
-    public function records (string $name ,Age $age)
-    {
-        echo $name;
-    }
-}
-
-$bola = new register();
-$bola->records("Bisi", new Age(34));
+//
+//class register
+//{
+//    public function records (string $name ,Age $age)
+//    {
+//        echo $name;
+//    }
+//}
+//
+//$bola = new register();
+//$bola->records("Bisi", new Age(34));
