@@ -1,49 +1,36 @@
 <?php
 
-class Person
+class Subscription
 {
-    public string $name;
-    public int $age;
 
-    /**
-     * Person constructor.
-     * @param string $name
-     * @param int $age
-     */
-    public function __construct(string $name, int $age)
+    public static function create()
     {
-        $this->name = $name;
-        $this->age = $age;
+
     }
 
-    public function getName()
+    public function cancel()
     {
-        echo $this->name;
+
     }
 
-    public function getAge()
+    public function invoice()
     {
-        return $this->age;
+
     }
 
-    public function job()
+    public function changePlan($newPlan)
     {
-        return $this->getName() . " has no job";
+
     }
 
-    public function favouriteTeam()
+    protected function findStripeCustomer()
     {
-        return "Barca";
+
     }
 
-    public function thingsDoneAtNight()
+    protected function findStripeSubscriptionByCustomer()
     {
-      echo "He cooks at night";
+
     }
+
 }
-
-$bob = new Person("Bob" , 23);
-$bob->getName();
-
-
-$bob->thingsDoneAtNight();
