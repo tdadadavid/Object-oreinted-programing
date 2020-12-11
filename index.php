@@ -1,14 +1,40 @@
 <?php
 
+
+class Age
+{
+    private $age;
+
+    /**
+     * Age constructor.
+     * @param $age
+     */
+    public function __construct($age)
+    {
+        if ($age < 0 || $age > 120)
+        {
+            throw new Exception("Age cannot have this value");
+        }
+        else
+        {
+            echo $age;
+        }
+
+        $this->age = $age;
+
+    }
+}
+
+$bola
+
+
 class register
 {
-    public function records ($name , $age)
+    public function records (string $name ,Age $age)
     {
         echo $name;
-
-        echo $age;
     }
 }
 
 $bola = new register();
-$bola->records("Bisi", -200);
+$bola->records("Bisi", new Age(34));
