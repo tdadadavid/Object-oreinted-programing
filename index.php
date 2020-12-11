@@ -3,7 +3,7 @@
 
 class Age
 {
-    public $age;
+    private $age;
 
 
 
