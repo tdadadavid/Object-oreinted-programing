@@ -2,10 +2,20 @@
 
 class Subscription
 {
+    private StripeSubscriptionGateway $gateway;
 
-    public static function create()
+    /**
+     * Subscription constructor.
+     * @param StripeSubscriptionGateway $gateway
+     */
+    public function __construct(StripeSubscriptionGateway $gateway)
     {
+        $this->gateway = $gateway;
+    }
 
+    public function create()
+    {
+       $customers =  $this->gateway->findStripeCustomer();
     }
 
     public function cancel()
@@ -22,13 +32,17 @@ class Subscription
     {
 
     }
+}
 
-    protected function findStripeCustomer()
+class StripeSubscriptionGateway
+{
+
+    public function findStripeCustomer()
     {
 
     }
 
-    protected function findStripeSubscriptionByCustomer()
+    public function findStripeSubscriptionByCustomer()
     {
 
     }
