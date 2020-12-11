@@ -1,37 +1,49 @@
 <?php
 
-
-//interface  Newsletter
-//{
-//    public function subscribe($email);
-//}
-
-class CampaignMonitor
+class Person
 {
-    public function subscribe($email)
+    public string $name;
+    public int $age;
+
+    /**
+     * Person constructor.
+     * @param string $name
+     * @param int $age
+     */
+    public function __construct(string $name, int $age)
     {
-        echo "Thanks for subscribing with us";
+        $this->name = $name;
+        $this->age = $age;
+    }
+
+    public function getName()
+    {
+        echo $this->name;
+    }
+
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    public function job()
+    {
+        return $this->getName() . " has no job";
+    }
+
+    public function favouriteTeam()
+    {
+        return "Barca";
+    }
+
+    public function thingsDoneAtNight()
+    {
+      echo "He cooks at night";
     }
 }
 
-class Drip
-{
-    public function subscribe($email)
-    {
-        echo "Thanks for using Drip";
-    }
-}
+$bob = new Person("Bob" , 23);
+$bob->getName();
 
-class NewsLetterSubscriptionController
-{
-    public function store($newsletter)
-    {
-        $email = "davidtofunmidada@gmail.com";
 
-        $newsletter->subscribe($email);
-    }
-}
-
-$controller = new NewsLetterSubscriptionController();
-
-$controller->store(new CampaignMonitor());
+$bob->thingsDoneAtNight();
